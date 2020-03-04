@@ -19,7 +19,12 @@ class DataFactory {
 
   public function loader() {
 
+
     foreach(glob(DATA_FACTORY_PATH . 'app/src/class/*.php') as $file) {
+      include_once $file;
+    }
+
+    foreach(glob(DATA_FACTORY_PATH . 'app/controllers/*.php') as $file) {
       include_once $file;
     }
     
@@ -47,7 +52,7 @@ class DataFactory {
 
     /** use ACF to REST API plugin if fields queries are required */
     add_action('init', ['Server', 'init'], 1);
-    //add_action('rest_api_init', [$api, 'registerFields'], 99);
+    add_action('rest_api_init', [$api, 'registerFields'], 99);
 
     add_action('init', [$entities, 'registerTaxonomies'], 10);
     add_action('init', [$entities, 'registerPostTypes'], 11);

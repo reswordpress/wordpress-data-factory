@@ -18,6 +18,7 @@ class Taxonomy {
     $this->name = $name;
     $this->post_type = $post_type;
     $this->type_name = ucfirst($this->post_type);
+    $this->rest_base = strtolower($this->post_type . '-' . $plural);
     
     $this->labels = $this->getLabels($this->type_name, $singular, $plural);
     $this->args = $this->getArgs($plural);
@@ -65,7 +66,10 @@ class Taxonomy {
       'show_admin_column'           => true,
       'update_count_callback'       => '_update_post_term_count',
       'query_var'                   => true,
-      'rewrite'                     => false
+      'rewrite'                     => false,
+      'show_in_rest'                => true,
+      'rest_base'                   => $this->rest_base,
+      'rest_controller_class'       => 'WP_REST_Terms_Controller',
     ];
 
     return $args;

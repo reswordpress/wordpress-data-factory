@@ -41,6 +41,7 @@ class Recipe {
     $this->description = $fields['description'];
     $this->procedures = $fields['procedures'];
     $this->ingredients = $fields['ingredients'];
+    $this->macros = $fields['macros'];
 
     $this->next_post = get_next_post();
     $this->previous_post = get_previous_post();
