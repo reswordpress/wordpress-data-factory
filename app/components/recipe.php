@@ -55,7 +55,7 @@ acf_add_local_field_group([
         'class' => '',
         'id' => '',
       ],
-      'return_format' => 'array',
+      'return_format' => 'url',
       'preview_size' => 'large',
       'insert' => 'append',
       'library' => 'all',
