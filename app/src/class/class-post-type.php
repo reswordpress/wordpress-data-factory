@@ -68,7 +68,8 @@ class PostType {
         //'comments',
         'author',
         'thumbnail',
-        'custom-fields'
+        'custom-fields',
+        'excerpt'
       ],
       'taxonomies'             => $taxonomies,
       'hierarchical'           => false,

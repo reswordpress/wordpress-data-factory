@@ -56,6 +56,10 @@ class RESTController {
     if($data->data['featured_media']):
       $data->data['image_url'] = get_the_post_thumbnail_url($post_id);
     endif;
+    if($data->data['content']):
+      $data->data['content'] = $post->post_content;
+    endif;
+    $data->data['excerpt'] = $post->post_excerpt;
 
     /** parse ACF to REST API data to post data level - avoid parsing on front */
     if($data->data['acf']):
@@ -69,7 +73,6 @@ class RESTController {
   public function removeData($data, $post, $context) {
 
     $_keys = [
-      'content',
       'status',
       'guid',
       'link',

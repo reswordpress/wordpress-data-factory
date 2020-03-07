@@ -40,6 +40,9 @@ class Ingredient {
     $this->unit = $fields['unit'] ?? [];
     $this->macros = $fields['macros'] ?? [];
 
+    $this->image_url = get_the_post_thumbnail_url($this->id);
+    $this->excerpt = $ingredient->post_excerpt;
+
     $this->next_post = get_next_post();
     $this->previous_post = get_previous_post();
 
