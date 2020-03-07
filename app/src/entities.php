@@ -16,10 +16,6 @@ class Entities {
 
   }
 
-  public function init() {
-
-  }
-
   public function loopEntities($action) {
 
     if(empty($this->entities)) return;
@@ -41,10 +37,6 @@ class Entities {
   public function registerTaxonomies() {
 
     $this->loopEntities('registerTaxonomies');
-
-  }
-
-  public function registerAPI() {
 
   }
 

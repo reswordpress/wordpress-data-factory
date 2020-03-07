@@ -16,13 +16,6 @@ class eRecipe {
 
   }
 
-  public function init() {
-
-    add_action('init', [$this, 'registerTaxonomies'], 10);
-    add_action('init', [$this, 'registerPostType'], 11);
-
-  }
-
   public function registerTaxonomies() {
 
     $this->registerCategories();
@@ -31,12 +24,7 @@ class eRecipe {
     if(!$this->taxonomies || empty($this->taxonomies)) return;
 
   }
-
-  public function registerAPI() {
-
-
-  }
-
+  
   /** args for registration */
 
   // taxonomies

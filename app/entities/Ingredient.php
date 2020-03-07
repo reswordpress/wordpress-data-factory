@@ -16,24 +16,12 @@ class eIngredient {
 
   }
 
-  public function init() {
-
-    add_action('init', [$this, 'registerTaxonomies'], 10);
-    add_action('init', [$this, 'registerPostType'], 11);
-
-  }
-
   public function registerTaxonomies() {
 
     $this->registerCategories();
     $this->registerTags();
 
     if(!$this->taxonomies || empty($this->taxonomies)) return;
-
-  }
-
-  public function registerAPI() {
-
 
   }
 
