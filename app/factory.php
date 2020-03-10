@@ -48,8 +48,6 @@ class DataFactory {
     $api = new API($this->entities['type']);
     $acf = new FactoryACF;
 
-    add_action('after_setup_theme', ['ThemeConfig', 'addThemeSupports']);
-
     /** use ACF to REST API plugin if fields queries are required */
     add_action('init', ['Server', 'init'], 1);
     add_action('rest_api_init', [$api, 'registerFields'], 99);
