@@ -49,7 +49,7 @@ class DataFactory {
     $acf = new FactoryACF;
 
     /** use ACF to REST API plugin if fields queries are required */
-    add_action('init', ['Server', 'init'], 1);
+    //add_action('init', ['Server', 'init'], 1);
     add_action('rest_api_init', [$api, 'registerFields'], 99);
 
     add_action('init', [$entities, 'registerTaxonomies'], 10);
